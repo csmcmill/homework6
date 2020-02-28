@@ -31,10 +31,14 @@ function increaseSpeed() {
 
 function skipAhead() {
 	var skip_ahead = document.getElementById("myVideo");
-	skip_ahead.currentTime += 60;
+	// skip_ahead.currentTime += 60;
 	if(video.ended){
+		video.pause();
 		video.currentTime = 0;
 		video.play()
+	}
+	else{
+		skip_ahead.currentTime += 60;
 	}
 	console.log("Current location is "+ video.currentTime);
 } 
@@ -43,19 +47,19 @@ function mute() {
 	if (video.muted){
 		video.muted = false;
 		document.querySelector("#mute").innerHTML = "Mute";
-		console.log("Changed to Unmuted");
+		console.log("Unmuted");
 	}
 	else{
 		video.muted = true;
 		document.querySelector("#mute").innerHTML = "Muted";
-		console.log("Changed to Muted")
+		console.log("Muted")
 	}
 }
 
 function changeVolume() {
 	video.volume = volumeSlider.value / 100;
 	document.querySelector("#volume").innerHTML = volumeSlider.value + "%";
-	console.log("Volume is " + video.volume);
+	console.log("Volume is " + volumeSlider.value);
 }
 
 function gray() {
