@@ -64,14 +64,25 @@ function changeVolume() {
 
 function gray() {
 	// document.getElementById("myVideo").style.filter = "grayscale(100%)";
+
+	// var gray_gray = document.getElementById("myVideo");
+	// gray_gray.classList.add("grayscale");
+	
 	var gray_gray = document.getElementById("myVideo");
-	gray_gray.classList.add("grayscale");
+	gray_gray.classList.toggle("grayscale");
+
 	console.log("In grayscale");
+
 }
 
 function color() {
 	// document.getElementById("myVideo").style.filter = "grayscale(0)";
+
+	// var color_color = document.getElementById("myVideo");
+	// color_color.classList.remove("grayscale");
+
 	var color_color = document.getElementById("myVideo");
-	color_color.classList.remove("grayscale");
+	color_color.classList.toggle("grayscale");
+
 	console.log("In color") 
 }
