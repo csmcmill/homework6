@@ -10,7 +10,7 @@ function playVid() {
 	vol.innerHTML = video.volume *100 + '%';
 	console.log("Play Video");
 	console.log(video);
-} 
+}  
 
 function pauseVid() { 
 	video.pause();
@@ -18,19 +18,22 @@ function pauseVid() {
 } 
 
 function decreaseSpeed() { 
-	video.playbackRate *= .20;
+	var video_rate_decrease = document.getElementById("myVideo")
+	video_rate_decrease.playbackRate -= .20;
 	console.log("Speed is " + video.playbackRate);	  
-} 
+}
 
 function increaseSpeed() {
-	video.playbackRate *= 1.25;
+	var video_rate_increase = document.getElementById("myVideo")
+	video_rate_increase.playbackRate += .25;
 	console.log("Speed is " + video.playbackRate);
 }
 
 function skipAhead() {
 	var skip_ahead = document.getElementById("myVideo");
 	skip_ahead.currentTime += 60;
-	if(video.ended == true){
+	if(video.ended){
+		video.currentTime = 0;
 		video.play()
 	}
 	console.log("Current location is "+ video.currentTime);
